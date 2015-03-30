@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>LogmeJS example</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="/css/jquery-ui.min.css" rel="stylesheet">
+        <script src="/js/jquery-1.11.2.min.js" type="text/javascript"></script>
+        <script type="text/javascript" src="/js/jquery-ui.min.js"></script>
+        <script src="/js/logme.js" type="text/javascript"></script>
+        <script type="text/javascript">
+            $(function(){
+                var logme = new LogmeJS('http://www.logservice.localhost/logmejs.php');
+                $('#event').click(function(){
+                    logme.sendLogJS({action:'event',member:$('#memberid').val(),e_id:101,timestamp:new Date()});
+                });
+                $('#reward').click(function(){
+                    logme.sendLogJS({action:'reward',member:$('#memberid').val(),gold:100});
+                });
+                $('#login').click(function(){
+                    logme.sendLogJS({action:'login',member:$('#memberid').val()});
+                });
+                $('#register').click(function(){
+                    logme.sendLogJS({action:'register',member:$('#memberid').val()});
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div>
+            memberID : <input type="text" id="memberid"/>
+            <br />
+            <input type="button" id="event" value="event"/>
+            <br />
+            <input type="button" id="reward" value="reward"/>
+            <br />
+            <input type="button" id="login" value="login"/>
+            <br />
+            <input type="button" id="register" value="register"/>
+        </div>
+    </body>
+</html>
