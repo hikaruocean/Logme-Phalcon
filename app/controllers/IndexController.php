@@ -34,8 +34,8 @@ class IndexController extends ControllerBase {
                 var_dump($v);
                 echo PHP_EOL;
             }
-            Register::mapReduceClose($this->mongo,$result);
-            die();
+            //Register::mapReduceClose($this->mongo,$result);
+            //die();
         } catch (Exception $e) {
             die($e->getMessage());
         }
