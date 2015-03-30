@@ -6,7 +6,7 @@ class SettingController extends ControllerBase
     public function initialize(){
         $this->view->setTemplateBefore('backend');
     }
-    
+
     public function indexAction()
     {
         $am_ary = SysActionmap::find([
@@ -61,7 +61,7 @@ class SettingController extends ControllerBase
             'conditions'=>['SUBDOC'=>['$exists'=>true]]
         ));
         unset($obj->SUBDOC);
-        if(!$obj->save()){
+        if($obj && !$obj->save()){
             echo json_encode(['result'=>'500','msg'=>'clear old register failed']);
             die();
         }
@@ -72,7 +72,7 @@ class SettingController extends ControllerBase
             'conditions'=>['RELATION'=>['$exists'=>true]]
         ));
         unset($obj->RELATION);
-        if(!$obj->save()){
+        if($obj && !$obj->save()){
             echo json_encode(['result'=>'500','msg'=>'clear old login failed']);
             die();
         }
@@ -105,4 +105,3 @@ class SettingController extends ControllerBase
         echo json_encode(['result'=>'200']);
     }
 }
-

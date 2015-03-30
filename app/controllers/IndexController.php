@@ -27,13 +27,13 @@ class IndexController extends ControllerBase {
 //            foreach($ro as $v){
 //                echo $v->_id->{'$id'}.' : '.date('Y-m-d H:i:s',(int)$v->CRT->sec).'.'.$v->CRT->usec.'<br />';
 //            }
-            
-            $result = Register::mapReduce($this->mongo,'function(){emit(this.member,{"member":this.member});}',NULL,'tmp');
+
+            /*$result = Register::mapReduce($this->mongo,'function(){emit(this.member,{"member":this.member});}',NULL,'tmp');
             $cursor = Register::mapReduceFind($this->mongo,$result);
             foreach($cursor as $v){
                 var_dump($v);
                 echo PHP_EOL;
-            }
+            }*/
             //Register::mapReduceClose($this->mongo,$result);
             //die();
         } catch (Exception $e) {
