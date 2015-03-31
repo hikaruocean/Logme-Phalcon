@@ -80,7 +80,7 @@
                             <a href="/admin/chart"><i class="fa fa-fw fa-bar-chart-o"></i> Charts</a>
                         </li>-->
                         <li>
-                            <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-bar-chart-o"></i> Charts <i class="fa fa-fw fa-caret-down"></i></a>
+                            <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-bar-chart-o"></i> Data Charts <i class="fa fa-fw fa-caret-down"></i></a>
                             <ul id="demo" class="collapse">
                                 <li>
                                     <a href="/admin/chart/date">By Date</a>

@@ -28,7 +28,7 @@
             for (var i in am_obj[$('.action').val()]) {
                 option_str += '<option value="' + i + '">' + i + '</option>';
             }
-            var condition_html = '<p class="condition subcondition"><button type="button" class="btn btn-sm btn-danger delcondition">Del</button><label>&nbsp;Condition&nbsp;:&nbsp;</label><select class="field" name="field[]">' + option_str + '</select><label>&nbsp;Operator&nbsp;:&nbsp;</label><select class="operator" name="operator[]"><option value=""></option></select>&nbsp;<span class="valueFrame"><input type="text" name="value[]" class="value" placeholder="VALUE"/><span class="btSpan"><label>&nbsp;and&nbsp;</label><input type="text" name="valueBt[]" class="value" placeholder="VALUE"/></span></span><span class="hright"><button type="button" class="btn btn-sm btn-primary addcondition">add</button></span></p>';
+            var condition_html = '<p class="condition subcondition"><button type="button" class="btn btn-sm btn-danger delcondition">Del</button><label>&nbsp;Condition&nbsp;:&nbsp;</label><select class="field" name="field[]">' + option_str + '</select><label>&nbsp;Operator&nbsp;:&nbsp;</label><select class="operator" name="operator[]"><option value=""></option></select>&nbsp;<span class="valueFrame"><input type="text" name="value[]" class="value" placeholder="VALUE"/><span class="btSpan"><label>&nbsp;and&nbsp;</label><input type="text" name="valueBt[]" class="valueBt" placeholder="VALUE"/></span></span><span class="hright"><button type="button" class="btn btn-sm btn-primary addcondition">add</button></span></p>';
             $('.condition_frame').append(condition_html);
         });
         $(document).on('click', '.delcondition', function() {
@@ -46,12 +46,16 @@
             var dataType = {bool: 0, int: 1, float: 2, string: 3, isodate: 4};
             var option_str = '<option value=""></option>';
             $(this).parents('.subcondition').find('.value').val('');
+            $(this).parents('.subcondition').find('.valueBt').val('');
             if (!$(this).val()) {
 
             }
             else {
                 if ($(this).parents('.subcondition').find('.value').data('DateTimePicker')) {
                     $(this).parents('.subcondition').find('.value').data('DateTimePicker').destroy();
+                }
+                if ($(this).parents('.subcondition').find('.valueBt').data('DateTimePicker')) {
+                    $(this).parents('.subcondition').find('.valueBt').data('DateTimePicker').destroy();
                 }
                 switch (dataType[am_obj[$('.action').val()][$(this).val()]]) {
                     case 0:
@@ -79,6 +83,9 @@
                         option_str += '<option value="Dgte">greaterThanEqual</option>';
                         option_str += '<option value="Dbtw">between</option>';
                         $(this).parents('.subcondition').find('.value').datetimepicker({
+                            format: 'YYYY-MM-DD HH:mm:00'
+                        });
+                        $(this).parents('.subcondition').find('.valueBt').datetimepicker({
                             format: 'YYYY-MM-DD HH:mm:00'
                         });
                         break;
