@@ -76,12 +76,9 @@
                         <li>
                             <a href="/admin"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
                         </li>
-<!--                        <li>
-                            <a href="/admin/chart"><i class="fa fa-fw fa-bar-chart-o"></i> Charts</a>
-                        </li>-->
                         <li>
-                            <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-bar-chart-o"></i> Data Charts <i class="fa fa-fw fa-caret-down"></i></a>
-                            <ul id="demo" class="collapse">
+                            <a href="javascript:;" data-toggle="collapse" data-target="#dataChart"><i class="fa fa-fw fa-bar-chart-o"></i> Data Charts <i class="fa fa-fw fa-caret-down"></i></a>
+                            <ul id="dataChart" class="collapse">
                                 <li>
                                     <a href="/admin/chart/date">By Date</a>
                                 </li>
@@ -90,6 +87,34 @@
                                 </li>
                                 <li>
                                     <a href="/admin/chart/year">By Year</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript:;" data-toggle="collapse" data-target="#activeUserChart"><i class="fa fa-fw fa-bar-chart-o"></i> Active User Charts <i class="fa fa-fw fa-caret-down"></i></a>
+                            <ul id="activeUserChart" class="collapse">
+                                <li>
+                                    <a href="/admin/active/date">By Date</a>
+                                </li>
+                                <li>
+                                    <a href="/admin/active/month">By Month</a>
+                                </li>
+                                <li>
+                                    <a href="/admin/active/year">By Year</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-bar-chart-o"></i> Register Charts <i class="fa fa-fw fa-caret-down"></i></a>
+                            <ul id="demo" class="collapse">
+                                <li>
+                                    <a href="/admin/register/date">By Date</a>
+                                </li>
+                                <li>
+                                    <a href="/admin/register/month">By Month</a>
+                                </li>
+                                <li>
+                                    <a href="/admin/register/year">By Year</a>
                                 </li>
                             </ul>
                         </li>

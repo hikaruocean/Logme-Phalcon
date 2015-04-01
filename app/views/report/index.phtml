@@ -34,10 +34,13 @@
                             <th>N(5)</th>
                             <th>N(6)</th>
                             <th>N(7)</th>
+                            <th>N(14)</th>
+                            <th>N(21)</th>
+                            <th>N(28)</th>
                         </tr>
                         {% for i,v in dateAry %}
                         <tr>
-                            <th>{{date('M j',report_time+i*86400)}}</th>
+                            <th>{{date('M j',report_time-i*86400)}}</th>
                             {% for j,w in dateAry[i] %}
                             <?php if ($dateAry[$i][$j] !== NULL): ?>
                                 <td style="background: repeating-linear-gradient(135deg, #b8d4fc, #b8d4fc 5px, rgba(184, 212, 252, 0.9) 5px, rgba(184, 212, 252, 0.95) 8px)">
@@ -72,7 +75,7 @@
                         </div>
                     </div>
                 </div>
-                <a href="#">
+                <a href="/admin/register/date">
                     <div class="panel-footer">
                         <span class="pull-left">View Details</span>
                         <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -94,7 +97,7 @@
                         </div>
                     </div>
                 </div>
-                <a href="#">
+                <a href="/admin/register/date">
                     <div class="panel-footer">
                         <span class="pull-left">View Details</span>
                         <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -116,7 +119,7 @@
                         </div>
                     </div>
                 </div>
-                <a href="#">
+                <a href="/admin/register/date">
                     <div class="panel-footer">
                         <span class="pull-left">View Details</span>
                         <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -138,7 +141,7 @@
                         </div>
                     </div>
                 </div>
-                <a href="#">
+                <a href="/admin/register/date">
                     <div class="panel-footer">
                         <span class="pull-left">View Details</span>
                         <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -162,8 +165,8 @@
                 </div>
                 <a href="#">
                     <div class="panel-footer">
-                        <span class="pull-left">View Details</span>
-                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                        <span class="pull-left">&nbsp;</span>
+                        <span class="pull-right"></span>
                         <div class="clearfix"></div>
                     </div>
                 </a>
@@ -182,7 +185,7 @@
                         </div>
                     </div>
                 </div>
-                <a href="#">
+                <a href="/admin/active/date">
                     <div class="panel-footer">
                         <span class="pull-left">View Details</span>
                         <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -204,7 +207,7 @@
                         </div>
                     </div>
                 </div>
-                <a href="#">
+                <a href="/admin/active/date">
                     <div class="panel-footer">
                         <span class="pull-left">View Details</span>
                         <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -226,7 +229,7 @@
                         </div>
                     </div>
                 </div>
-                <a href="#">
+                <a href="/admin/active/date">
                     <div class="panel-footer">
                         <span class="pull-left">View Details</span>
                         <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -238,7 +241,7 @@
     </div>
     <!-- /.row -->
 
-    <div class="row">
+<!--    <div class="row">
         <div class="col-lg-12">
             <div class="panel panel-default">
                 <div class="panel-heading">
@@ -249,10 +252,10 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div>-->
     <!-- /.row -->
 
-    <div class="row">
+<!--    <div class="row">
         <div class="col-lg-4">
             <div class="panel panel-default">
                 <div class="panel-heading">
@@ -386,7 +389,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div>-->
     <!-- /.row -->
 
 </div>

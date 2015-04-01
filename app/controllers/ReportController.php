@@ -57,7 +57,7 @@ class ReportController extends ControllerBase {
         /**
          * retention rate
          */
-        for ($i = 8; $i > 1; $i--) {
+        for ($i = 29; $i > 1; ($i <= 8 ? $i-- : $i-=7)) {
             $reg_time['start'] = $report_timestamp - $i * $daytime;
             $reg_time['end'] = $reg_time['start'] + $daytime;
             $retention_ary = [];
@@ -66,7 +66,7 @@ class ReportController extends ControllerBase {
             $regCount = $registerCollection::count(array(
                         'conditions' => $conditions
             ));
-            for ($j = 1; $j < 8; $j++) {
+            for ($j = 1; $j < 29;($j < 8 ? $j++ : $j+=8)){
                 if ($j < $i) {
                     $log_time['start'] = $reg_time['start'] + $j * $daytime;
                     $log_time['end'] = $log_time['start'] + $daytime;
@@ -83,10 +83,10 @@ class ReportController extends ControllerBase {
                     array_push($retention_ary, NULL);
                 }
             }
-            array_push($date_ary, $retention_ary);
+            $date_ary[$i] = $retention_ary;
         }
 
-        $this->view->report_time = time() - 86400 * 7;
+        $this->view->report_time = time();
         $this->view->dateAry = $date_ary;
         }
         catch (Exception $e){
